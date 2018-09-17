@@ -47,13 +47,10 @@
 		       {{textarea class="form-control" value=description placeholder="Write something" rows="8"}}
 	          </div>
 
-        <a href="home.htm">
-        <button {{action 'addBlog'}} class="btn btn-primary" >Save</button>
-        </a>
-     
-    <a href="home.htm">
-         <button class="btn btn-danger">Cancel</button>
-   </a>
+       {{#link-to 'home'}} <button {{action 'addBlog'}} class="btn btn-primary" >Save</button>{{/link-to}}
+       
+       {{#link-to 'home'}}<button class="btn btn-danger">Cancel</button>{{/link-to}}
+  
  </form>
 
             {{/panel.body}}

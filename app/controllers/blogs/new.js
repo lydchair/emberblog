@@ -15,12 +15,14 @@ export default Controller.extend({
 			});
 
 			// Save to Database
-			newBlog.save();
+            newBlog.save();
+            
 
          //clear form
          this.setProperties({
              title: '',
-             description:''
+             description:'',
+             
 
 
          });
