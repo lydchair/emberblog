@@ -1,0 +1,17 @@
+
+ <form>
+
+
+  <div class="form-group">
+		<label>Title</label>
+		{{input type="text" class="form-control" value=model.title placeholder="What is the title?"}}
+	</div>
+
+  <div class="form-group">
+		<label>Description</label>
+		{{textarea class="form-control" value=model.description placeholder="Write something" rows="8"}}
+	</div>
+
+
+	<button {{action 'editBlog' model.id}} class="btn btn-primary">Save</button>
+ </form>

@@ -4,6 +4,13 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'myblog',
     environment,
+    contentSecurityPolicy: {'connect-src': "'self' wss://*.firebaseio.com"},
+    firebase: {
+      apiKey: 'xyz',
+      authDomain: 'embersimpleblog-59893.firebaseapp.com',
+      databaseURL: 'https://embersimpleblog-59893.firebaseio.com/',
+      storageBucket: 'embersimpleblog-59893.appspot.com'
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

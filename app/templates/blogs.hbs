@@ -1,0 +1,67 @@
+{{outlet}}
+<a href="#panel"><h4>Click the pen to write a post</h4></a>
+
+
+{{! to show saved post}}
+{{#each model as |blog|}}
+ <div class="jumbotron">
+    <a href="#editPanel">
+       <h4>{{#link-to 'blogs.edit' blog.id}}{{blog.title}}{{/link-to}}</h4>
+    </a>
+         <div class="tellEdit">click title to edit this post</div>
+         <p>{{blog.description}}</p>
+      <div class="btn-group">
+     <button {{action 'deleteBlog' blog.id}} class="btn btn-danger">Delete</button>
+     </div>
+ </div>
+{{/each}}
+
+{{! Binding text }}
+<div class="jumbotron">
+       <h4>{{title}}</h4>
+         <p>{{description}}</p>
+ </div>
+
+{{! New post}}
+<div id="panel">
+  {{#cp-panel name='panelA' as |panel| }}
+
+    {{#sticky-element top= 10}}
+      {{#panel.toggle}}
+
+         {{fa-icon "pencil-square-o" size=3}}
+
+      {{/panel.toggle}}
+    {{/sticky-element}}
+            {{#panel.body}}
+
+ <form>
+
+     <div class="form-group">
+		 <label>Title</label>
+		   {{input type="text" class="form-control" value=title placeholder="What is the title?"}}
+     </div>
+
+          <div class="form-group">
+		      <label>Description</label>
+		       {{textarea class="form-control" value=description placeholder="Write something" rows="8"}}
+	          </div>
+
+        <a href="home.htm">
+        <button {{action 'addBlog'}} class="btn btn-primary" >Save</button>
+        </a>
+     
+    <a href="home.htm">
+         <button class="btn btn-danger">Cancel</button>
+   </a>
+ </form>
+
+            {{/panel.body}}
+  {{/cp-panel}}
+   
+</div>
+
+
+
+
+
